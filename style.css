@@ -1,0 +1,244 @@
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #1a1a1a;
+            color: #fff;
+            font-family: 'Dancing Script', cursive;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .carousel-container {
+            width: 95%;
+            max-width: 400px; /* Reduzido para fotos verticais */
+            margin: 20px auto;
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(255,51,102,0.3);
+        }
+
+        .carousel {
+            display: flex;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .carousel-item {
+            min-width: 100%;
+            height: 550px; /* Aumentado para formato vertical */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 24px;
+            animation: fall 8s linear infinite;
+            opacity: 0.7;
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(-100%) rotate(0deg); opacity: 0; }
+            50% { opacity: 0.7; }
+            100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+        }
+
+        .content {
+            position: relative;
+            z-index: 2;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        h1 {
+            font-family: 'Great Vibes', cursive;
+            color: #ff3366;
+            font-size: 3em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            margin: 15px 0;
+        }
+
+        /* Estilo para a seção de texto */
+        .text-container {
+            background: rgb(255, 0, 0); /* Fundo translúcido */
+            backdrop-filter: blur(10px); /* Efeito de desfoque */
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+            border: 1px solid rgb(255, 51, 51);
+            box-shadow: 0 4px 15px rgb(255, 51, 51);
+        }
+
+        .text-container p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: #fff;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .love-table {
+            margin: 25px auto;
+            border-collapse: separate;
+            border-spacing: 15px;
+            position: relative;
+            max-width: 800px;
+        }
+
+        .love-table::before {
+            content: '❤️';
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2em;
+            animation: pulse 1.5s infinite;
+        }
+
+        .love-table td {
+            background: rgba(255, 51, 51, 0.15);
+            border: 2px solid #ff3366;
+            border-radius: 15px;
+            padding: 20px;
+            min-width: 120px;
+            text-align: center;
+            position: relative;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 4px 15px rgb(255, 51, 51);
+            transition: all 0.3s ease;
+        }
+
+        .love-table td span {
+            display: block;
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #ff3366;
+            margin-bottom: 5px;
+        }
+
+        .love-table td:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgb(252, 0, 0);
+        }
+
+        @keyframes pulse {
+            0% { transform: translateX(-50%) scale(1); }
+            50% { transform: translateX(-50%) scale(1.2); }
+            100% { transform: translateX(-50%) scale(1); }
+        }
+
+        .counter {
+            font-size: 1.2em;
+            margin: 20px 0;
+            color: #ff0040;
+            text-align: center;
+            width: 100%;
+            display: block;
+            padding: 10px 0;
+        }
+
+        .music-player {
+            margin: 30px 0;
+            padding: 15px;
+            background: rgba(255,51,102,0.1);
+            border-radius: 15px;
+            width: 90%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5em;
+            }
+
+            .carousel-container {
+                max-width: 350px;
+            }
+
+            .carousel-item {
+                height: 480px;
+            }
+
+            .text-container {
+                padding: 15px;
+            }
+
+            .text-container p {
+                font-size: 1em;
+            }
+
+            .love-table {
+                border-spacing: 10px;
+            }
+            
+            .love-table td {
+                padding: 15px;
+                min-width: 100px;
+            }
+            
+            .love-table td span {
+                font-size: 1.5em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .carousel-container {
+                max-width: 300px;
+            }
+
+            .carousel-item {
+                height: 420px;
+            }
+
+            .text-container {
+                padding: 10px;
+            }
+
+            .text-container p {
+                font-size: 0.95em;
+            }
+
+            .love-table {
+                border-spacing: 5px;
+                width: 95%;
+            }
+            
+            .love-table td {
+                padding: 10px;
+                min-width: 80px;
+                font-size: 0.9em;
+            }
+            
+            .love-table td span {
+                font-size: 1.2em;
+            }
+            
+            .love-table::before {
+                font-size: 1.5em;
+                top: -20px;
+            }
+        }
+ 
